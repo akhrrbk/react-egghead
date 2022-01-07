@@ -5,9 +5,14 @@
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
     <script type="text/babel">
         const rootElement = document.getElementById('root')
+        const children = 'Hello World'
+        const className = 'container'
+        // const element = <div className={className} children={children} />
         
-        const element = <div class='container'>Hello World</div>
-        
+        // using props way
+        const props = {children, className}
+        // const element = <div {...props} />
+        const element = <div id='elementid' {...props} className='not-container' />
         ReactDOM.render(element, rootElement)
     </script>
 </body>
