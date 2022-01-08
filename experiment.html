@@ -4,23 +4,15 @@
     <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
     <script type="text/babel">
-
         const rootElement = document.getElementById('root')
-        
-        const CharacterCount = ({text}) => {
-            
-            return (
-                <div>
-                    {`'${text}' is`} {text.length ? <strong>{text.length}</strong> : 'ZERO'} characters
-                </div>
+        const fuck = () => {
+            const timenow = new Date().toLocaleTimeString()
+            const element = (
+                <div><input value={timenow} /></div>
             )
+            ReactDOM.render(element, rootElement)
         }
-        const element = (
-            <>
-                <CharacterCount text='Hello Worlds' />
-                <CharacterCount text='' />
-            </>
-        )
-        ReactDOM.render(element, rootElement)
+    fuck()
+    setInterval(fuck, 1000)
     </script>
 </body>
